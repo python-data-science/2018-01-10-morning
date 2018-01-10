@@ -14,6 +14,9 @@ df2017 = df[(df.Period > '2006-12-31') & (df.Period < '2008-01-01')]
 dfgender = df2017.groupby(['Gender']).mean()
 dfgender.loc[dfgender['Unemployed'].idxmax()]
 
+genderanswer = dfgender.index[0]
+print(genderanswer, "have higher unemployment rates")
+
 """
 Question 2:
 What month, on average, has the lowest unemployment for women?
