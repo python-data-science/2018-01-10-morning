@@ -11,18 +11,18 @@ ANSWER: MEN
 
 df['Period'] = pd.to_datetime(df.Period)
 df2017 = df[(df.Period > '2006-12-31') & (df.Period < '2008-01-01')]
-Gender = df2017.groupby(['Gender']).mean()
-Gender.loc[Gender['Unemployed'].idxmax()]
+dfgender = df2017.groupby(['Gender']).mean()
+dfgender.loc[dfgender['Unemployed'].idxmax()]
 
 """
 Question 2:
 What month, on average, has the lowest unemployment for women?
 
-ANSWER: Month 7
+ANSWER: Month 2
 """
 
 dfwomen = df[df.Gender == 'Women']
 dfwomen['Month'] = dfwomen['Period'].dt.month
 
-Month = dfwomen.groupby(['Month']).mean()
-Month.loc[Month['Unemployed'].idxmax()]
+dfmonth = dfwomen.groupby(['Month']).mean()
+dfmonth.loc[dfmonth['Unemployed'].idxmin()]
