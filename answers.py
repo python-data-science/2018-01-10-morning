@@ -20,6 +20,6 @@ df2.groupby(['Gender']).mean()
 # What month, on average, has the lowest unemployment for women?
 
 women = df[(df.Gender == 'Women')]  
-women['month'] = dfwomen.Period.dt.month  
+women['month'] = women.Period.dt.month  
 bymonth = women.groupby('month')['Unemployed'].agg(['mean'])  
 bymonth.sort_values('mean', ascending=True)  
