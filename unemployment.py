@@ -26,3 +26,6 @@ dfwomen['Month'] = dfwomen['Period'].dt.month
 
 dfmonth = dfwomen.groupby(['Month']).mean()
 dfmonth.loc[dfmonth['Unemployed'].idxmin()]
+
+monthanswer = dfmonth.index[1]
+print("Month", monthanswer, "has the lowest unemployment rate for women")
