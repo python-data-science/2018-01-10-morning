@@ -13,13 +13,13 @@ unemployment['Day'] = unemployment['Period'].dt.day
 #Question 1:
 #In 2007, which gender (man, woman) had higher average unemployment?
 only2007 = unemployment[unemployment.Year == 2007]
-only2007.groupby(['Gender']).sum()
+only2007.groupby(['Gender']).mean()
 
-Answer:  In 2007, Men(8,471,000) had a higher unemployment rate than Women(7,308,000)
+Answer:  In 2007, Men(100,845) had a higher average unemployment rate than Women(87,000)
 
 #Question 2:
 #What month, on average, has the lowest unemployment for women?
 Ladiesonly = unemployment[unemployment.Gender == 'Women']
-Answer = Ladiesonly.groupby(['Month'])['Unemployed'].agg(['sum']).nsmallest(1, 'sum')
+Answer = Ladiesonly.groupby(['Month'])['Unemployed'].agg(['mean']).nsmallest(1, 'mean')
 
-Answer: March is the month with the lowest total unemployment for women
+Answer: February (02) is the month with the lowest mean unemployment for women (220,298)
