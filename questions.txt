@@ -1,5 +1,25 @@
 Question 1:
 In 2007, which gender (man, woman) had higher average unemployment?
 
+import pandas as pd
+# from pandas import ExcelWriter
+from pandas import ExcelFile
+ 
+df = pd.read_excel('unemploy-stats.xlsx', sheetname='Sheet1')
+ 
+# print("Column headings:")
+# print(df.columns)
+
+df[df.Unemployed == max(df.Unemployed)]
+
+
+
+
 Question 2:
 What month, on average, has the lowest unemployment for women?
+
+import pandas as pd
+from pandas import ExcelFile
+ 
+df = pd.read_excel('unemploy-stats.xlsx', sheetname='Sheet1')
+F_df[F_df.Unemployed == max(F_df.Unemployed)] 
