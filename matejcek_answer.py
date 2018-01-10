@@ -9,6 +9,6 @@ print(question1)
 print()
 
 df["month"] = df["Period"].dt.month
-question2 = df[df["Gender"] == "Women"].groupby("month").mean().sort_values(by = ["Unemployed"], ascending = False).head(1)
+question2 = df[df["Gender"] == "Women"].groupby("month").mean().sort_values(by = ["Unemployed"]).head(1)
 print("QUESTION TWO")
 print(question2)
